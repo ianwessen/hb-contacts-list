@@ -1,0 +1,121 @@
+// Color palette
+$white: #fff;
+$off-white: #ecf0f1;
+$text-muted: #9b9b9b;
+$brand-primary: #56aeb6;
+
+$default-shadow: 1px 1px 16px rgba(#000,.1);
+
+.text-muted {
+  color: $text-muted;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica Neue, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+  background-color: $off-white;
+}
+
+header {
+  padding: .5em 0;
+  background-color: $white;
+  box-shadow: $default-shadow;
+  
+  @media screen and (max-width: 640px) {
+    h3 { text-align: center }
+  }
+  
+  @media screen and (min-width: 639px) {
+    input[type="text"],
+    h3 { margin: 0 }
+  }
+  
+  h3 {
+    color: $brand-primary;
+    font-weight: 700;
+  }
+}
+
+.contact-list {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+// Base contact-card styles
+contact-card {
+  position: relative;
+  display: block;
+  height: 360px;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: $white;
+  overflow: hidden;
+  border-radius: 2px;
+  box-shadow: $default-shadow;
+  
+  figure { margin: 0 }
+}
+
+// Image placement
+contact-card .image-container {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  background-size: cover;
+  background-position: center center;
+  background-color: $off-white;
+  transition: .3s;
+  
+  img.icon{
+    position: absolute;
+    left: .25em;
+    bottom: .25em;
+    width: 40px;
+    height: 40px;
+    background-color: $white;
+    transition: .3s;
+  }
+}
+
+contact-card figcaption {
+  width: 100%;
+  background: $white;
+  transition: .3s;
+  
+  h5,
+  p { margin: 0 }
+  
+  h5 { line-height: 2em }
+  
+  .job,
+  .company,
+  .phone,
+  .email {
+    display: block;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  // Hidden for hover effect
+  .phone,
+  .email {
+    opacity: 0;
+    transition: .3s;
+  }
+}
+
+// Hover fancy-ness
+contact-card:hover {
+  img.icon,
+  figcaption {
+    transform: translate3d(0,-20px,0);
+  }
+
+  .phone,
+  .email {
+    opacity: 1;
+  }
+}

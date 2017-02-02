@@ -1,0 +1,9 @@
+figure
+  .image-container(style="background-image: url('{{profileImage}}') ")
+    img.icon(ng-src="{{ icon }}")
+  figcaption
+    h5.name {{ name }}
+    p.job {{ job }}
+    p.company.text-muted {{ companyName }}
+    p.phone {{ phone }}
+    a.email(ng-href="mailto:{{ email }}") {{ email }}
